@@ -1,11 +1,19 @@
 \documentclass[]{DefinitionFormat}
+\usepackage{import}
+\usepackage{standalone}
+\usepackage{tikz}
 
 \begin{document}
 
-\begin{definition}{Pervasive nature of computing}
-A paradigm also known as ubiquitous computing describing a large network of small distributed computers that give the appearance of being everywhere.
-
-As computers in society become more ubiquitous, the subject of ethics and professional approaches to innovating devices becomes increasingly important.
-\end{definition}
+% i := 0; i < 100; i++
+\foreach \i in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...,100} {
+	% Look for file Lectures/Lecture{i}/Lecture{i}.tex
+	\edef\FileName{Lectures/Lecture\i/Lecture\i.tex}
+	\IfFileExists{\FileName}{
+		% Include found .tex file and clear page
+		\subimport{Lectures/Lecture\i/}{\FileName}
+		\clearpage
+	}
+}
 
 \end{document}
