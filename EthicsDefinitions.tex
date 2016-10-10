@@ -5,8 +5,8 @@
 
 \begin{document}
 
-% i := 0; i < 100; i++
-\foreach \i in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...,100} {
+% i := 1; i <= 100; i++
+\foreach \i in {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...,100} {
 	% Look for file Lectures/Lecture{i}/Lecture{i}.tex
 	\edef\FileName{Lectures/Lecture\i/Lecture\i.tex}
 	\IfFileExists{\FileName}{
