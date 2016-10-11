@@ -21,7 +21,7 @@
 \newenvironment{summary}
 	{
 		\vspace{2pt}
-		\def\FrameCommand{\hspace{0pt} \vrule width 2pt \hspace{5pt}}%
+		\def\FrameCommand{\hspace{0pt} \vrule width 1pt \hspace{5pt}}%
 		\MakeFramed {\advance\hsize-\width \FrameRestore}
 		\itshape
 	}
