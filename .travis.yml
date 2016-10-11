@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
+  texlive-math-extra
+script:
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory ${TRAVIS_BUILD_DIR}
+  EthicsDefinitions.tex
+deploy:
+  provider: releases
+  file: "EthicsDefinitions.pdf"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
+  api_key:
+    secure: Ve3ztK6w/g4LtDuGQX4clL3GWhAapTMEYtFQB9cm+9zmLXsRNDlz/zu+7ChCWILxfLQMmEr6jM/IFrX9W/2zcviY3l/3sdAg2gzQ8WFScS67tsFArQGXMTcH1p5WpdS4Cb8JMZRSG6o5EEZ50Rj6L1WBVMBE18KstUm3p84wdfj2D0AFAtiLscl6BnjMmyUgZtJ9vlCIGxpleXOlxmopWENsL364pJtcH4Yrq60tT5iN/12QeedHyv4zJZrcGfDCwBESwjz4hNtgue/kPvntWtDG4tp65Kf2MCICuM8rmlsHKcglRPR4xUOyGR+MfUdIuqXjR2Sj4bY8NgPUPSqT5oDck59Mns8fOqHrYEmDy4vzz32MXdpD9uVhaYmHwiA64OmJahkcL2TWmThk44I4Cs2fzRJNrptBOL6wZbKCs7tNoNV+5xXYFXuQwwHWuJZ3ZtlmTBd2UDOj4LgiFOR0Nrc2o1ykRb/ZhN7+Ei6wb8xDHUuRns6lr1LEvpCJIX/4intnU1U99bH3JMd8/3GESxz8sSEbtqNQbHDIQwR6xOsbKMY4ZfpLT32cxoUEhd7DkHn7+uCSiNd3qXQC2o1/A0Uui9Fw+ZTrbhBTvuKMaMi9g+C/mv8PBkhtI3O6ycEi50y8zHhBr8BKPIAJO+GHTSAY+o4E6HMl5n2/B+p/TWw=
