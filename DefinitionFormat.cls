@@ -10,6 +10,7 @@
 \usepackage[left=1.3in, right=1.3in, bottom=1.3in, top=1.3in]{geometry}
 \usepackage{framed}
 \usepackage{parskip}
+\usepackage{enumitem}
 
 % Constants:
 \newcommand{\definitionContentWidth}{0.80\textwidth}	% Width of minipage used in definition environment
